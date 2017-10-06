@@ -1,0 +1,6 @@
+# OS specific crap
+.DS_Store
+Thumbs.db
+
+# Misc stuff
+log/

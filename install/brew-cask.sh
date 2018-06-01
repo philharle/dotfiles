@@ -11,6 +11,12 @@ apps=(
 	iterm2
 	google-chrome
 	spotify
+	royal-tsx
+	shuttle
+	slack
+	visual-studio-code
+	wavebox
+	whatsapp
 )
 
 brew cask install "${apps[@]}"

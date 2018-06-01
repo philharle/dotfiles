@@ -25,7 +25,6 @@ set scrolloff=4           " Keep 4 lines off the edges of the screen when
                           "   scrolling
 set splitbelow            " Open horizontal splits on bottom (more natural)
 set splitright            " Open vertical splits on right (more natural)
-set colorcolumn=80        " Colour column 80 as a visual guide
 set formatprg=par         " Use Par program to format text
 set lazyredraw            " Don't update the display while executing macros
 set laststatus=2          "   tell VIM to always put a status line in, even

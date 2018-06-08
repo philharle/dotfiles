@@ -23,6 +23,7 @@ brew upgrade --all
 apps=(
 	git
 	wget
+	kubectl
 )
 
 brew install "${apps[@]}"

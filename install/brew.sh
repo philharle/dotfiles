@@ -24,6 +24,7 @@ apps=(
 	git
 	wget
 	kubectl
+	ipcalc
 )
 
 brew install "${apps[@]}"

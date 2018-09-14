@@ -25,6 +25,11 @@ apps=(
 	wget
 	kubectl
 	ipcalc
+	aws-shell
+	aws-cli
+	openssl
+	tflinthtop
+	terraform
 )
 
 brew install "${apps[@]}"

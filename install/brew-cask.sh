@@ -17,6 +17,8 @@ apps=(
 	visual-studio-code
 	wavebox
 	whatsapp
+	docker
+	drawio
 )
 
 brew cask install "${apps[@]}"

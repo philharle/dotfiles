@@ -28,7 +28,8 @@ apps=(
 	aws-shell
 	aws-cli
 	openssl
-	tflinthtop
+	tflint
+	htop
 	terraform
 )
 

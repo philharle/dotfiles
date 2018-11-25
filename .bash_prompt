@@ -93,6 +93,17 @@ prompt_terraform() {
     return 0
 }
 
+prompt_pwd() {
+    maxlen=50
+    if (( ${#PWD} > maxlen ))
+    then
+        (( offset = ${#PWD} - maxlen ))
+        echo ".. ${PWD:offset}"
+    else
+        echo "${PWD}"
+    fi
+}
+
 if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
@@ -144,11 +155,13 @@ PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\]@";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\]:";
-PS1+="\[${green}\]\w"; # working directory
+#PS1+="\[${green}\]\w"; # working directory
+PS1+='\[${green}\]$(prompt_pwd)';
 PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
 PS1+="\$(prompt_terraform \"${white} Wksp: ${yellow}\")"; # Terraform workspace details
 #PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
+#PS1+="\[$(it2setkeylabel set status "$prompt_terraform")\]";
 export PS1;
 
 PS2="\[${yellow}\] \[${reset}\]";

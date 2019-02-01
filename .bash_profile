@@ -69,8 +69,10 @@ mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and ju
 trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the MacOS trash
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
-alias tidygit="git checkout develop && git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d" #tidygit:    Removes local branches that no longer exist on remote
-
+alias tidygit="git checkout develop >/dev/null 2>&1 && git fetch -p >/dev/null 2>&1 && git branch -vv | grep gone] | cut -d ' ' -f 3 | xargs git branch -d" #tidygit:    Removes local branches that no longer exist on remote
+alias ipcalc="~/Documents/Local_Apps/ipcalc-0.41/ipcalc"
+alias terraform11="~/Documents/Local_Apps/terraform-0.11.11/terraform"
+ 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
